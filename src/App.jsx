@@ -1,21 +1,22 @@
 import Profile from './components/Profile/Profile';
 import userData from './userData.json'
 import FriendList from './components/FriendList/FriendList';
-import Friend from './friends.json';
+import friend from './friends.json';
 
-const App = () => {
+function App() {
+  const {username, tag, location, avatar, stats} = userData;
   return (
     <>
       <Profile
-        name={userData.username}
-        tag={userData.tag}
-        location={userData.location}
-        image={userData.avatar}
-        stats={userData.stats}
+        name={username}
+        tag={tag}
+        location={location}
+        image={avatar}
+        stats={stats}
       />
-      <FriendList friends={friends} />
+      <FriendList friends={friend} />
     </>
   );
-};
+}
 
 export default App
